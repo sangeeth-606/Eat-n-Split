@@ -1,6 +1,7 @@
 // import React from 'react'
 import { useState } from "react";
 
+// eslint-disable-next-line react/prop-types
 const Frndaddform = ( {onaddfriends} ) => {
   const [name, setName] = useState("");
   const [image, setImage] = useState("https://i.pravatar.cc/48");

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 
-const Friend = ({ friend }) => {
+// eslint-disable-next-line react/prop-types
+const Friend = ({ friend,onSelection }) => {
 return (
     <li style={{ listStyleType: 'none', marginBottom: '20px', padding: '10px', border: '1px solid #ccc', borderRadius: '5px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -12,7 +13,7 @@ return (
                 {friend.balance === 0 && <p className="negative" style={{ color: 'gray' }}>Both are even</p>}
             </div>
         </div>
-        <button style={{ padding: '5px 10px', backgroundColor: '#007BFF', color: 'white', border: 'none', borderRadius: '3px', cursor: 'pointer' }}>Select</button>
+        <button onClick={()=>onSelection(friend)}  style={{ padding: '5px 10px', backgroundColor: '#007BFF', color: 'white', border: 'none', borderRadius: '3px', cursor: 'pointer' }}>Select</button>
     </li>
 );
 }

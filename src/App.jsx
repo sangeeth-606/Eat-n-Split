@@ -13,13 +13,13 @@ const initialFriends = [
   {
     id: 933372,
     name: "Sarah",
-    image: "https://i.pravatar.cc/48?u=933372",
+    image: "https://i.pravatar.cc/48?u=933472",
     balance: 20,
   },
   {
     id: 499476,
     name: "Anthony",
-    image: "https://i.pravatar.cc/48?u=933372",
+    image: "https://i.pravatar.cc/48?u=930372",
     balance: 0,
   },
 ];
@@ -27,19 +27,25 @@ const initialFriends = [
 function App() {
   const [friends, setFriends] = useState(initialFriends);
   const [showaddform, setShowaddform] = useState(false);
+  const [selectedFriend, setSelectedFriend] = useState(null);
   function handleshowaddfrnd() {
     setShowaddform(!showaddform);
   }
-  
+
   function handleaddfriend(friend) {
     setFriends((friends) => [...friends, friend]);
     setShowaddform(false);
   }
+
+  function handleselectfriend(friend) {
+    setSelectedFriend(friend);
+  }
   return (
     <div className="app">
       <div className="sidebar">
-        <Friendslist friends={friends} />
-        {showaddform && <Frndaddform  onaddfriends={handleaddfriend} />}
+        <Friendslist friends={friends} onSelection={handleselectfriend} />
+        {showaddform && <Frndaddform onaddfriends={handleaddfriend} />}
+
         <button
           onClick={handleshowaddfrnd}
           style={{
@@ -54,7 +60,7 @@ function App() {
           {showaddform ? "Close" : "Add Friend"}
         </button>
       </div>
-      <SplitForm />
+      {selectedFriend && <SplitForm selectedFriend={selectedFriend} />}
     </div>
   );
 }

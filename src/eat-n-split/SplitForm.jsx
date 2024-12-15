@@ -1,16 +1,17 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
+// import React from 'react'
 
-const SplitForm = () => {
+const SplitForm = ({selectedFriend} ) => {
 return (
     <form action="" style={{ maxWidth: '400px', margin: '0 auto', padding: '20px', border: '1px solid #ccc', borderRadius: '10px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>
-            <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Split a Bill</h2>
+            <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Split a Bill with {selectedFriend.name} </h2>
             <label htmlFor="" style={{ display: 'block', marginBottom: '5px' }}>Bill Amount</label>
             <input type="text" style={{ width: '100%', padding: '10px', marginBottom: '10px', borderRadius: '5px', border: '1px solid #ccc' }} />
 
             <label htmlFor="" style={{ display: 'block', marginBottom: '5px' }}>Your Expense</label>
             <input type="text" style={{ width: '100%', padding: '10px', marginBottom: '10px', borderRadius: '5px', border: '1px solid #ccc' }} />
 
-            <label htmlFor="" style={{ display: 'block', marginBottom: '5px' }}>X's Expense</label>
+            <label htmlFor="" style={{ display: 'block', marginBottom: '5px' }}> {selectedFriend.name} s Expense</label>
             <input type="text" disabled style={{ width: '100%', padding: '10px', marginBottom: '10px', borderRadius: '5px', border: '1px solid #ccc', backgroundColor: '#f9f9f9' }} />
 
             <label htmlFor="" style={{ display: 'block', marginBottom: '5px' }}>Who is paying the bill?</label>
