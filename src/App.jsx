@@ -2,6 +2,7 @@ import Friendslist from "./eat-n-split/Friendslist";
 import Frndaddform from "./eat-n-split/Frndaddform";
 import SplitForm from "./eat-n-split/SplitForm";
 import { useState } from "react";
+import "./App.css";
 
 const initialFriends = [
   {
