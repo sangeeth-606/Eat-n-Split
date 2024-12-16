@@ -1,9 +1,9 @@
-// import React from 'react'
+// // import React from 'react'
 
-const Billinput = () => {
-  return (
-    <div>Billinput</div>
-  )
-}
+// const Billinput = () => {
+//   return (
+//     <div>Billinput</div>
+//   )
+// }
 
-export default Billinput
+// export default Billinput
