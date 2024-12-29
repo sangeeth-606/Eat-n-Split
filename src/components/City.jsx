@@ -1,21 +1,21 @@
-import { useParams,useSearchParams } from "react-router-dom";
+// import { useParams,useSearchParams } from "react-router-dom";
 // import styles from "./City.module.css";
 
 
-const formatDate = (date) =>
-  new Intl.DateTimeFormat("en", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    weekday: "long",
-  }).format(new Date(date));
+// const formatDate = (date) =>
+//   new Intl.DateTimeFormat("en", {
+//     day: "numeric",
+//     month: "long",
+//     year: "numeric",
+//     weekday: "long",
+//   }).format(new Date(date));
 
 function City() {
 
-  const {id} =useParams()
-  const [SearchParams,setsearchparams]= useSearchParams()
-  const lat=SearchParams.get('lat')
-  const lng=SearchParams.get('lng')
+  // const {id} =useParams()
+  // const [SearchParams,setsearchparams]= useSearchParams()
+  // const lat=SearchParams.get('lat')
+  // const lng=SearchParams.get('lng')
   // TEMP DATA
   // const currentCity = {
   //   cityName: "Lisbon",
@@ -27,9 +27,10 @@ function City() {
   // const { cityName, emoji, date, notes } = currentCity;
 
   return (
-    <><h1>city {id} </h1>
-    <p>{lat}</p>
-    <p>{lng}</p>
+    <>
+    {/* <h1>city {id} </h1> */}
+    {/* <p>{lat}</p> */}
+    {/* <p>{lng}</p> */}
     </>
         
     // <div className={styles.city}>
