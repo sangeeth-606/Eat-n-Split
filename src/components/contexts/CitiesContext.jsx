@@ -10,15 +10,15 @@ function CitiesProvider({ children }) {
 
   useEffect(() => {
     async function fetchCities() {
+      setIsLoading(true); // Ensure loading state is set to true before fetching
       try {
         const response = await fetch("http://localhost:5000/cities");
         const data = await response.json();
         setCities(data);
-        setIsLoading(true);
       } catch {
         alert("Error fetching cities:");
       } finally {
-        setIsLoading(false);
+        setIsLoading(false); // Ensure loading state is set to false after fetching
       }
     }
 
@@ -26,21 +26,19 @@ function CitiesProvider({ children }) {
   }, []);
 
   async function getCity(id) {
-    // async function fetchCities() {
+    // setIsLoading(true); 
     try {
       const response = await fetch(`http://localhost:5000/cities/${id}`);
       const data = await response.json();
       setCurrentCity(data);
-      setIsLoading(true);
     } catch {
-      alert("Error fetching cities:");
+      alert("Error fetching city:");
     } finally {
-      setIsLoading(false);
-      // }
+      // setIsLoading(false); 
     }
   } 
   return (
-    <CitiesContext.Provider value={{ cities, isLoading, currentCity, getCity }}>
+    <CitiesContext.Provider value={{ cities, isLoading, currentCity, getCity, }}>
       {children}
     </CitiesContext.Provider>
   );
