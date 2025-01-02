@@ -46,11 +46,17 @@ function CitiesProvider({ children }) {
           "Content-Type": "application/json",
         },
       });
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+  
       const data = await response.json();
-      console.log(data);
-      setCities(cities=>[...cities, data]);
-    } catch {
-      alert("Error creating city:");
+      console.log("City created:", data);
+      setCities(cities => [...cities, data]);
+    } catch (error) {
+      console.error("Error creating city:", error);
+      alert("Error creating city: " + error.message);
     } finally {
       // Any cleanup code if needed
     }
