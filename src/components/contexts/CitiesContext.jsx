@@ -61,8 +61,31 @@ function CitiesProvider({ children }) {
       // Any cleanup code if needed
     }
   }
+
+
+  async function deleteCity(id) {
+    try {
+      const response = await fetch(`http://localhost:5000/cities/${id}`, {
+        method: "DELETE",
+        
+      });
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+  
+      // const data = await response.json();
+      // console.log("City created:", data);
+      setCities((cities=>cities.filter(city=>city.id!==id)));    ;
+    } catch (error) {
+      // console.error("Error creating city:", error);
+      alert("Error deleting city: " + error.message);
+    } finally {
+      // Any cleanup code if needed
+    }
+  }
   return (
-    <CitiesContext.Provider value={{ cities, isLoading, currentCity, getCity,createCity }}>
+    <CitiesContext.Provider value={{ cities, isLoading, currentCity, getCity,createCity ,deleteCity }}>
       {children}
     </CitiesContext.Provider>
   );
