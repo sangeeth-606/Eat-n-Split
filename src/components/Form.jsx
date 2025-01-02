@@ -3,8 +3,8 @@ import styles from "./Form.module.css";
 import Button from "./Button";
 import BackButton from "./BackButton";
 import { useUrlPosition } from "../hooks/useUrlPosition";
-import { Spinner } from "./Spinner";
-import { Message } from "./Message";
+// import { Spinner } from "./Spinner";
+// import { Message } from "./Message";
 
 export function convertToEmoji(countryCode) {
   if (!countryCode || countryCode.length !== 2) return ""; // Return empty if invalid
@@ -21,15 +21,15 @@ function Form() {
   const [lat, lng] = useUrlPosition();
 
   const [cityName, setCityName] = useState("");
-  const [country, setCountry] = useState("");
+  const [ setCountry] = useState("");
   const [date, setDate] = useState(new Date());
   const [notes, setNotes] = useState("");
   const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);
   const [emoji, setEmoji] = useState("");
 
   useEffect(() => {
-    if (!lat && !lng) return <Spinner/>
-    if (!lat && !lng) return <Message message="No coordinates found" />;
+    // if (!lat && !lng) return <Spinner/>
+    // if (!lat && !lng) return <Message message="No coordinates found" />;
     async function fetchCityData() {
       // if (!lat || !lng) return; // Ensure valid coordinates
       try {
