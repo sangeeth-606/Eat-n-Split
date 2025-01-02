@@ -10,6 +10,17 @@
         "lat": "54.30224161951247",
         "lng": "-7.183581630851638"
       }
+    },
+    {
+      "id": "fc5f",
+      "cityName": "Charlton",
+      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "date": "2025-01-02T19:34:17.913Z",
+      "notes": "hhhhh",
+      "position": {
+        "lat": "52.02282226165648",
+        "lng": "-1.2057879709579833"
+      }
     }
   ]
 }
