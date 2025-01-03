@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-// import { useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./City.module.css";
 import { useCities } from "./contexts/CitiesContext";
@@ -24,17 +23,7 @@ function City() {
     },
     [getCity, id]
   );
-  // const [SearchParams,setsearchparams]= useSearchParams()
-  // const lat=SearchParams.get('lat')
-  // const lng=SearchParams.get('lng')
-
-  // TEMP DATA
-  // const currentCity = {
-  //   cityName: "Lisbon",
-  //   emoji: "🇵🇹",
-  //   date: "2027-10-31T15:59:59.138Z",
-  //   notes: "My favorite city so far!",
-  // };
+ 
 
   const { cityName, emoji, date, notes } = currentCity;
 
